@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>mōōw — visual direction & poetic noise</title>
   <style>
-    /* === ОБЩИЕ НАСТРОЙКИ === */
+    /* Reset */
     * {
-      cursor: none;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     html, body {
-      margin: 0;
-      padding: 0;
+      height: 100%;
       background-color: #000;
       color: #fff;
       font-family: 'Arial', sans-serif;
       overflow-x: hidden;
-      position: relative;
     }
 
     body::before {
@@ -40,82 +40,44 @@
       50% { opacity: 0.25; transform: translateY(-1px); }
     }
 
-    /* === КАСТОМНЫЙ КУРСОР === */
-    #custom-cursor {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 12px;
-      height: 12px;
-      background: white;
-      border-radius: 50%;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
-      z-index: 9999;
-      mix-blend-mode: difference;
-    }
-
-    a:hover ~ #custom-cursor,
-    iframe:hover ~ #custom-cursor {
-      width: 24px;
-      height: 24px;
-      background: #fff;
-    }
-
-    /* === ХЕДЕР === */
     header {
       text-align: center;
-      padding: 120px 20px 40px;
+      padding: 100px 20px 30px;
     }
 
     .logo {
-      font-size: 100px;
+      font-size: 84px;
       font-weight: 900;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       text-transform: lowercase;
       text-shadow: 0 0 10px rgba(255,255,255,0.15);
-      animation: pulseGlow 4s ease-in-out infinite;
-    }
-
-    @keyframes pulseGlow {
-      0%, 100% { text-shadow: 0 0 10px rgba(255,255,255,0.15); }
-      50% { text-shadow: 0 0 20px rgba(255,255,255,0.3); }
     }
 
     .slogan-line {
-      font-size: 20px;
+      font-size: 18px;
       font-style: italic;
-      margin-top: 20px;
+      margin-top: 16px;
       color: #ccc;
       transition: 0.3s ease-in-out;
     }
 
-    .glitch {
-      animation: glitchy 0.4s ease-in-out;
-    }
-
-    @keyframes glitchy {
-      0% { text-shadow: 2px 0 red, -2px 0 blue; transform: translate(0); }
-      25% { text-shadow: -2px 0 red, 2px 0 blue; transform: translate(-1px, 1px); }
-      50% { text-shadow: 2px 0 red, -2px 0 blue; transform: translate(1px, -1px); }
-      100% { text-shadow: none; transform: translate(0); }
-    }
-
     .tagline {
-      margin-top: 40px;
+      margin-top: 30px;
       color: #999;
-      max-width: 700px;
+      max-width: 90%;
       text-align: center;
-      font-size: 16px;
+      font-size: 15px;
       line-height: 1.6;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    /* === СЕКЦИИ === */
     .section {
       max-width: 1200px;
       width: 100%;
       padding: 40px 20px;
+      margin-left: auto;
+      margin-right: auto;
       text-align: center;
     }
 
@@ -123,7 +85,7 @@
       position: relative;
       padding-bottom: 56.25%;
       height: 0;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       overflow: hidden;
       width: 100%;
     }
@@ -139,12 +101,43 @@
     h2 {
       font-size: 22px;
       font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .hook {
+      font-size: 16px;
+      color: #eee;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 40px auto 30px;
+    }
+
+    .footer-block {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .footer-logo {
+      font-size: 48px;
+      font-weight: bold;
+    }
+
+    .footer-subtext {
+      font-size: 16px;
+      color: #888;
+      margin-top: 8px;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .logo { font-size: 60px; }
+      .tagline { font-size: 14px; }
+      .hook { font-size: 15px; }
+      .footer-logo { font-size: 38px; }
     }
   </style>
 </head>
 <body>
-  <div id="custom-cursor"></div>
-
   <header>
     <div class="logo">mōōw</div>
     <div class="slogan-line" id="moow-slogan">mōōw / just vibes</div>
@@ -154,7 +147,7 @@
     </div>
   </header>
 
-  <div class="section" id="projects">
+  <div class="section">
     <h2>selected cuts</h2>
 
     <div class="video-wrapper">
@@ -174,27 +167,22 @@
     </div>
   </div>
 
-  <div class="section" style="max-width: 800px; margin: 40px auto 30px; text-align: center; line-height: 1.8;">
-    <p style="font-size: 18px; color: #eee;">
-      We don’t follow formats — we fracture them.<br>
-      No safe takes. No templates. Just raw, cinematic instinct.<br>
-      mōōw isn’t a brand. It’s a mood. A moment. A move.
-    </p>
-    <p style="font-size: 16px; color: #888; margin-top: 30px;">
-      You don't get it? Perfect. You're in.
-    </p>
+  <div class="hook">
+    We don’t follow formats — we fracture them.<br>
+    No safe takes. No templates. Just raw, cinematic instinct.<br>
+    mōōw isn’t a brand. It’s a mood. A moment. A move.<br><br>
+    <span style="color: #777; font-size: 14px;">You don't get it? Perfect. You're in.</span>
   </div>
 
-  <div class="section" style="margin-top: 30px;">
+  <div class="section">
     <h2>mōōw / we shoot the feeling. no rules. just edits.</h2>
-    <div style="margin-top: 30px;">
-      <div style="font-size: 56px; font-weight: bold;">mōōw</div>
-      <div style="color: #aaa; font-size: 18px; margin-top: 5px;">is the constant</div>
+    <div class="footer-block">
+      <div class="footer-logo">mōōw</div>
+      <div class="footer-subtext">is the constant</div>
     </div>
   </div>
 
   <script>
-    // Смена слоганов
     const slogans = [
       "just vibes",
       "that’s it",
@@ -220,22 +208,11 @@
       } while (index === lastIndex);
       lastIndex = index;
 
-      el.classList.remove('glitch');
-      void el.offsetWidth;
-      el.classList.add('glitch');
-
       el.textContent = `mōōw / ${slogans[index]}`;
     }
 
     document.addEventListener("DOMContentLoaded", () => {
       setInterval(updateSlogan, 3000);
-    });
-
-    // Кастомный курсор
-    const cursor = document.getElementById('custom-cursor');
-    document.addEventListener('mousemove', e => {
-      cursor.style.left = `${e.clientX}px`;
-      cursor.style.top = `${e.clientY}px`;
     });
   </script>
 </body>
