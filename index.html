@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>mōōw — visual direction & poetic noise</title>
   <style>
-    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -46,23 +45,29 @@
     }
 
     .logo {
-      font-size: 84px;
+      font-size: 170px;
       font-weight: 900;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       text-transform: lowercase;
-      text-shadow: 0 0 10px rgba(255,255,255,0.15);
+      text-shadow: 0 0 15px rgba(255,255,255,0.25);
+      animation: pulseGlow 4s ease-in-out infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { text-shadow: 0 0 15px rgba(255,255,255,0.2); }
+      50% { text-shadow: 0 0 30px rgba(255,255,255,0.4); }
     }
 
     .slogan-line {
-      font-size: 18px;
+      font-size: 20px;
       font-style: italic;
-      margin-top: 16px;
+      margin-top: 20px;
       color: #ccc;
       transition: 0.3s ease-in-out;
     }
 
     .tagline {
-      margin-top: 30px;
+      margin-top: 40px;
       color: #999;
       max-width: 90%;
       text-align: center;
@@ -128,9 +133,8 @@
       margin-top: 8px;
     }
 
-    /* Responsive */
     @media (max-width: 600px) {
-      .logo { font-size: 60px; }
+      .logo { font-size: 72px; }
       .tagline { font-size: 14px; }
       .hook { font-size: 15px; }
       .footer-logo { font-size: 38px; }
