@@ -3,28 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="mōōw — visual direction, montage, and poetic noise. Every project is a new version.">
   <title>mōōw — visual direction & poetic noise</title>
   <style>
-    body {
-      margin: 0;
-      background: #000;
-      color: #fff;
-      font-family: 'Arial', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    /* === ОБЩИЕ НАСТРОЙКИ === */
+    * {
+      cursor: none;
     }
 
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      background-image:
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.015) 0px, transparent 2px, transparent 4px),
+        radial-gradient(circle at 40% 30%, rgba(255,0,120,0.05), transparent 80%),
+        radial-gradient(circle at 80% 70%, rgba(0,200,255,0.04), transparent 90%);
+      animation: glitchBG 2.4s infinite ease-in-out;
+      z-index: -1;
+    }
+
+    @keyframes glitchBG {
+      0%, 100% { opacity: 0.1; transform: translateY(0px); }
+      50% { opacity: 0.25; transform: translateY(-1px); }
+    }
+
+    /* === КАСТОМНЫЙ КУРСОР === */
+    #custom-cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 12px;
+      height: 12px;
+      background: white;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
+      z-index: 9999;
+      mix-blend-mode: difference;
+    }
+
+    a:hover ~ #custom-cursor,
+    iframe:hover ~ #custom-cursor {
+      width: 24px;
+      height: 24px;
+      background: #fff;
+    }
+
+    /* === ХЕДЕР === */
     header {
       text-align: center;
-      padding: 80px 20px 20px;
+      padding: 120px 20px 40px;
     }
 
     .logo {
-      font-size: 72px;
+      font-size: 100px;
       font-weight: 900;
+      letter-spacing: 3px;
       text-transform: lowercase;
+      text-shadow: 0 0 10px rgba(255,255,255,0.15);
+      animation: pulseGlow 4s ease-in-out infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { text-shadow: 0 0 10px rgba(255,255,255,0.15); }
+      50% { text-shadow: 0 0 20px rgba(255,255,255,0.3); }
     }
 
     .slogan-line {
@@ -33,15 +89,6 @@
       margin-top: 20px;
       color: #ccc;
       transition: 0.3s ease-in-out;
-    }
-
-    .tagline {
-      margin-top: 40px;
-      color: #999;
-      max-width: 700px;
-      text-align: center;
-      font-size: 16px;
-      line-height: 1.6;
     }
 
     .glitch {
@@ -55,6 +102,16 @@
       100% { text-shadow: none; transform: translate(0); }
     }
 
+    .tagline {
+      margin-top: 40px;
+      color: #999;
+      max-width: 700px;
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* === СЕКЦИИ === */
     .section {
       max-width: 1200px;
       width: 100%;
@@ -79,16 +136,15 @@
       height: 100%;
     }
 
-    footer {
-      margin-top: 40px;
-      padding: 20px;
-      font-size: 14px;
-      color: #666;
-      text-align: center;
+    h2 {
+      font-size: 22px;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
+  <div id="custom-cursor"></div>
+
   <header>
     <div class="logo">mōōw</div>
     <div class="slogan-line" id="moow-slogan">mōōw / just vibes</div>
@@ -118,7 +174,6 @@
     </div>
   </div>
 
-  <!-- ВАЙБОВЫЙ ХУК -->
   <div class="section" style="max-width: 800px; margin: 40px auto 30px; text-align: center; line-height: 1.8;">
     <p style="font-size: 18px; color: #eee;">
       We don’t follow formats — we fracture them.<br>
@@ -130,10 +185,8 @@
     </p>
   </div>
 
-  <!-- ФИНАЛ -->
   <div class="section" style="margin-top: 30px;">
     <h2>mōōw / we shoot the feeling. no rules. just edits.</h2>
-
     <div style="margin-top: 30px;">
       <div style="font-size: 56px; font-weight: bold;">mōōw</div>
       <div style="color: #aaa; font-size: 18px; margin-top: 5px;">is the constant</div>
@@ -141,6 +194,7 @@
   </div>
 
   <script>
+    // Смена слоганов
     const slogans = [
       "just vibes",
       "that’s it",
@@ -175,6 +229,13 @@
 
     document.addEventListener("DOMContentLoaded", () => {
       setInterval(updateSlogan, 3000);
+    });
+
+    // Кастомный курсор
+    const cursor = document.getElementById('custom-cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = `${e.clientX}px`;
+      cursor.style.top = `${e.clientY}px`;
     });
   </script>
 </body>
