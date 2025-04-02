@@ -6,7 +6,6 @@
   <meta name="description" content="mōōw — visual direction, montage, and poetic noise. Every project is a new version.">
   <title>mōōw — visual direction & poetic noise</title>
   <style>
-    /* Базовая стилизация */
     body {
       margin: 0;
       background: #000;
@@ -28,26 +27,21 @@
       text-transform: lowercase;
     }
 
-    .logo-sub {
-      font-size: 18px;
-      margin-top: 5px;
-      color: #aaa;
+    .slogan-line {
+      font-size: 20px;
+      font-style: italic;
+      margin-top: 20px;
+      color: #ccc;
+      transition: 0.3s ease-in-out;
     }
 
     .tagline {
       margin-top: 40px;
       color: #999;
       max-width: 700px;
-      line-height: 1.6;
+      text-align: center;
       font-size: 16px;
-    }
-
-    .slogan-line {
-      font-size: 20px;
-      font-style: italic;
-      margin-top: 40px;
-      color: #ccc;
-      transition: 0.3s ease-in-out;
+      line-height: 1.6;
     }
 
     .glitch {
@@ -62,7 +56,8 @@
     }
 
     .section {
-      max-width: 1000px;
+      max-width: 1200px;
+      width: 100%;
       padding: 60px 20px;
       text-align: center;
     }
@@ -71,8 +66,9 @@
       position: relative;
       padding-bottom: 56.25%;
       height: 0;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
       overflow: hidden;
+      width: 100%;
     }
 
     .video-wrapper iframe {
@@ -88,30 +84,23 @@
       padding: 20px;
       font-size: 14px;
       color: #666;
-    }
-
-    .cta {
-      margin-top: 60px;
-      font-size: 16px;
-      opacity: 0.7;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">mōōw</div>
-    <div class="logo-sub">is the constant</div>
+    <div class="slogan-line" id="moow-slogan">mōōw / just vibes</div>
     <div class="tagline">
       Direction. Editing. Street poetry in frame.<br>
       Every project is a new version of mōōw.
     </div>
-    <div class="slogan-line" id="moow-slogan">mōōw / just vibes</div>
   </header>
 
   <div class="section" id="projects">
     <h2>selected cuts</h2>
 
-    <!-- VIDEO BLOCKS -->
     <div class="video-wrapper">
       <iframe src="https://player.vimeo.com/video/1071688838" frameborder="0" allowfullscreen></iframe>
     </div>
@@ -127,10 +116,6 @@
     <div class="video-wrapper">
       <iframe src="https://www.youtube.com/embed/_T6Cfy3GGFQ" frameborder="0" allowfullscreen></iframe>
     </div>
-  </div>
-
-  <div class="cta">
-    Want to collaborate? → <a href="mailto:youremail@example.com" style="color:#fff;text-decoration:underline;">write directly</a>
   </div>
 
   <footer>
