@@ -66,6 +66,33 @@
       transition: 0.3s ease-in-out;
     }
 
+    .glitch {
+      animation: glitchy 0.4s ease-in-out;
+    }
+
+    @keyframes glitchy {
+      0% {
+        text-shadow: 2px 0 red, -2px 0 blue;
+        transform: translate(0);
+      }
+      25% {
+        text-shadow: -2px 0 red, 2px 0 blue;
+        transform: translate(-1px, 1px);
+      }
+      50% {
+        text-shadow: 2px 0 red, -2px 0 blue;
+        transform: translate(1px, -1px);
+      }
+      75% {
+        text-shadow: -2px 0 red, 2px 0 blue;
+        transform: translate(-1px, 1px);
+      }
+      100% {
+        text-shadow: none;
+        transform: translate(0);
+      }
+    }
+
     .tagline {
       margin-top: 40px;
       color: #999;
@@ -211,6 +238,10 @@
         index = Math.floor(Math.random() * slogans.length);
       } while (index === lastIndex);
       lastIndex = index;
+
+      el.classList.remove('glitch');
+      void el.offsetWidth;
+      el.classList.add('glitch');
 
       el.textContent = `mōōw / ${slogans[index]}`;
     }
