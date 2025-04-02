@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>mōōw — is the constant</title>
+  <meta name="description" content="mōōw — visual direction, montage, and poetic noise. Every project is a new version.">
+  <title>mōōw — visual direction & poetic noise</title>
   <style>
+    /* Базовая стилизация */
     body {
       margin: 0;
-      background-color: #000;
+      background: #000;
       color: #fff;
       font-family: 'Arial', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
     }
 
     header {
@@ -25,9 +25,7 @@
     .logo {
       font-size: 56px;
       font-weight: 900;
-      letter-spacing: 2px;
       text-transform: lowercase;
-      color: #fff;
     }
 
     .logo-sub {
@@ -37,12 +35,11 @@
     }
 
     .tagline {
-      font-size: 16px;
       margin-top: 40px;
-      max-width: 700px;
-      text-align: center;
       color: #999;
+      max-width: 700px;
       line-height: 1.6;
+      font-size: 16px;
     }
 
     .slogan-line {
@@ -50,8 +47,7 @@
       font-style: italic;
       margin-top: 40px;
       color: #ccc;
-      opacity: 1;
-      transition: opacity 0.3s ease-in-out;
+      transition: 0.3s ease-in-out;
     }
 
     .glitch {
@@ -62,7 +58,6 @@
       0% { text-shadow: 2px 0 red, -2px 0 blue; transform: translate(0); }
       25% { text-shadow: -2px 0 red, 2px 0 blue; transform: translate(-1px, 1px); }
       50% { text-shadow: 2px 0 red, -2px 0 blue; transform: translate(1px, -1px); }
-      75% { text-shadow: -2px 0 red, 2px 0 blue; transform: translate(-1px, 1px); }
       100% { text-shadow: none; transform: translate(0); }
     }
 
@@ -76,7 +71,7 @@
       position: relative;
       padding-bottom: 56.25%;
       height: 0;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
       overflow: hidden;
     }
 
@@ -89,10 +84,16 @@
     }
 
     footer {
-      padding: 40px 20px;
-      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
       font-size: 14px;
-      opacity: 0.6;
+      color: #666;
+    }
+
+    .cta {
+      margin-top: 60px;
+      font-size: 16px;
+      opacity: 0.7;
     }
   </style>
 </head>
@@ -110,26 +111,30 @@
   <div class="section" id="projects">
     <h2>selected cuts</h2>
 
+    <!-- VIDEO BLOCKS -->
     <div class="video-wrapper">
-     <iframe title="vimeo-player" src="https://player.vimeo.com/video/1071688838?h=17ab3c9802" width="640" height="360" frameborder="0"    allowfullscreen></iframe>
+      <iframe src="https://player.vimeo.com/video/1071688838" frameborder="0" allowfullscreen></iframe>
     </div>
     <div class="video-wrapper">
-      <iframe src="https://player.vimeo.com/video/1071688567" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <iframe src="https://player.vimeo.com/video/1071688567" frameborder="0" allowfullscreen></iframe>
     </div>
     <div class="video-wrapper">
-      <iframe src="https://player.vimeo.com/video/1071690838" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <iframe src="https://player.vimeo.com/video/1071690838" frameborder="0" allowfullscreen></iframe>
     </div>
     <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/gVB--vBy7uw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/gVB--vBy7uw" frameborder="0" allowfullscreen></iframe>
     </div>
     <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/_T6Cfy3GGFQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/_T6Cfy3GGFQ" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 
+  <div class="cta">
+    Want to collaborate? → <a href="mailto:youremail@example.com" style="color:#fff;text-decoration:underline;">write directly</a>
+  </div>
+
   <footer>
-    mōōw / we shoot the feeling<br>
-    no rules. just edits.
+    mōōw / we shoot the feeling. no rules. just edits.
   </footer>
 
   <script>
