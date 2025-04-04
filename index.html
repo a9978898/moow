@@ -222,52 +222,6 @@
     mōōw isn’t a brand. It’s a mood. A moment. A move.<br><br>
     <span style="color: #777; font-size: 14px;">You don't get it? Perfect. You're in.</span>
   </div>
-
-  <div class="section">
-    <h2>mōōw / we shoot the feeling. no rules. just edits.</h2>
-    <div class="footer-block">
-      <div class="footer-logo">mōōw</div>
-      <div class="footer-subtext">is the constant</div>
-    </div>
-  </div>
-
-  <script>
-    const slogans = [
-      "just vibes",
-      "that’s it",
-      "let it play",
-      "this is art, ok?",
-      "whatever this is",
-      "we’ll fix it in post",
-      "camera fell but we kept it",
-      "too many layers",
-      "not thinking, just vibing",
-      "export and pray",
-      "undefined & proud",
-      "no context, only noise"
-    ];
-
-    let lastIndex = -1;
-    const el = document.getElementById("moow-slogan");
-
-    function updateSlogan() {
-      let index;
-      do {
-        index = Math.floor(Math.random() * slogans.length);
-      } while (index === lastIndex);
-      lastIndex = index;
-
-      el.classList.remove('glitch');
-      void el.offsetWidth;
-      el.classList.add('glitch');
-
-      el.textContent = `mōōw / ${slogans[index]}`;
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      setInterval(updateSlogan, 3000);
-    });
-  </script>
 <!-- Кнопка открытия модального окна -->
 <div style="text-align: center; margin: 40px 0;">
   <button onclick="openModal()" class="contact-button">Contact</button>
@@ -421,5 +375,52 @@ setInterval(() => {
   nameInput.placeholder = placeholders[phIndex];
 }, 3000);
 </script>
+
+  
+  <div class="section">
+    <h2>mōōw / we shoot the feeling. no rules. just edits.</h2>
+    <div class="footer-block">
+      <div class="footer-logo">mōōw</div>
+      <div class="footer-subtext">is the constant</div>
+    </div>
+  </div>
+
+  <script>
+    const slogans = [
+      "just vibes",
+      "that’s it",
+      "let it play",
+      "this is art, ok?",
+      "whatever this is",
+      "we’ll fix it in post",
+      "camera fell but we kept it",
+      "too many layers",
+      "not thinking, just vibing",
+      "export and pray",
+      "undefined & proud",
+      "no context, only noise"
+    ];
+
+    let lastIndex = -1;
+    const el = document.getElementById("moow-slogan");
+
+    function updateSlogan() {
+      let index;
+      do {
+        index = Math.floor(Math.random() * slogans.length);
+      } while (index === lastIndex);
+      lastIndex = index;
+
+      el.classList.remove('glitch');
+      void el.offsetWidth;
+      el.classList.add('glitch');
+
+      el.textContent = `mōōw / ${slogans[index]}`;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      setInterval(updateSlogan, 3000);
+    });
+  </script>
 </body>
 </html>
