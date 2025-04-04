@@ -337,8 +337,21 @@ function openModal() {
   modal.style.display = 'flex';
   modal.style.animation = 'fadeInNoise 0.5s ease';
 }
+
 function closeModal() {
-  document.getElementById('contactModal').style.display = 'none';
+  const modal = document.getElementById('contactModal');
+  modal.style.animation = 'fadeOutNoise 0.5s ease';
+  setTimeout(() => {
+    modal.style.display = 'none';
+    resetModal();
+  }, 500); // Дождаться завершения анимации
+}
+
+function resetModal() {
+  const form = document.getElementById('contactForm');
+  form.reset();
+  form.style.display = 'block';
+  document.getElementById('thankYouMessage').style.display = 'none';
 }
 
 // Скрываем форму и показываем спасибо после отправки
@@ -355,6 +368,12 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     if (response.ok) {
       form.style.display = 'none';
       document.getElementById('thankYouMessage').style.display = 'block';
+      
+      // Автоматическое исчезновение через 4 секунды
+      setTimeout(() => {
+        closeModal();
+      }, 4000);
+
     } else {
       alert('Oops! Something went wrong...');
     }
@@ -369,7 +388,6 @@ const placeholders = [
   "your name",
   "no name",
   "who cares",
-  "your name",
   "ghost tag",
   "anonymous",
   "secret vibe"
@@ -379,7 +397,7 @@ let phIndex = 0;
 setInterval(() => {
   phIndex = (phIndex + 1) % placeholders.length;
   nameInput.placeholder = placeholders[phIndex];
-}, 2000); // каждые 2 секунды
+}, 2000); // Каждые 2 секунды
 </script>
 
 
