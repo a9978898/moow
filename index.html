@@ -365,12 +365,20 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 
 // Плейсхолдер автосмена
 const nameInput = document.getElementById('name');
-const placeholders = ["your name", "no name", "who cares", "ghost name"];
+const placeholders = [
+  "your name",
+  "no name",
+  "who cares",
+  "ghost tag",
+  "anonymous",
+  "secret vibe"
+];
 let phIndex = 0;
+
 setInterval(() => {
   phIndex = (phIndex + 1) % placeholders.length;
   nameInput.placeholder = placeholders[phIndex];
-}, 3000);
+}, 2000); // каждые 2 секунды
 </script>
 
 
